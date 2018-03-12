@@ -1,0 +1,139 @@
+shelf-settings {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.25);
+  z-index: 40;
+
+  > div {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 50%;
+    min-height: 200px;
+    width: 600px;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    padding-top: 20px;
+    border: 1px solid #000000;
+    border-top: 4px solid #6868d8;
+    background: linear-gradient(160deg, transparent 0%, transparent 49%, #ffffff 81%, #ffffff 100%),
+                repeating-linear-gradient(70deg, #efeef6 0px, #efeef6 2px, transparent 3px, transparent 10px),
+                linear-gradient(160deg, #efeef6 0%, #efeef6 49%, #f2f2f8 49%, #f2f2f8 61%, #ffffff 100%);
+    overflow-y: auto;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: -4px;
+      height: 4px;
+      background: repeating-linear-gradient(to right, #6868d8 0%, #b3b3db 100%);
+    }
+  }
+
+  .title {
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .tab-tray {
+    margin-bottom: 10px;
+
+    .tab {
+      display: inline-block;
+      padding: 10px;
+      padding-bottom: 5px;
+      font-weight: bold;
+      border: 1px solid #999999;
+      border-bottom: 0px none;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      margin-right: 10px;
+      background-color: rgba(128, 128, 128, 0.25);
+      cursor: pointer;
+
+      &.selected {
+        background-color: #F8F8F8;
+      }
+    }
+  }
+
+  .tab-body {
+    display: none;
+    margin-bottom: 10px;
+
+    &.selected {
+      display: block;
+    }
+    &.selected.custom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+    }
+  }
+
+  .field {
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 0px;
+    position: relative;
+
+    label {
+      font-weight: bold;
+      display: block;
+    }
+    input[type=number] {
+      width: 100px;
+      margin: 5px;
+      padding: 3px;
+    }
+    input[type=text] {
+      width: 200px;
+      margin: 5px;
+      padding: 3px;
+    }
+    .show-color {
+      position: absolute;
+      top: 5px;
+      height: 20px;
+      width: 20px;
+      right: 40px;
+      border: 1px solid #444444;
+      border-radius: 50%;
+      overflow: hidden;
+
+      input {
+        opacity: 0;
+        cursor: pointer;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+      }
+    }
+  }
+
+  .field.title {
+    width: 100%;
+    border: 0px none transparent;
+  }
+
+  button.save {
+    float: right;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  button.cancel {
+    float: right;
+    padding: 5px;
+  }
+}

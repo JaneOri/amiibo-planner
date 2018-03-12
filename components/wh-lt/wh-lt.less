@@ -1,0 +1,142 @@
+wh-lt {
+  position: absolute;
+  display: block;
+  min-width: 40px;
+  min-height: 40px;
+
+  .shy {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease-out 0.5s, visibility 0.75s step-end;
+    touch-action: none;
+  }
+  &:hover .shy {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.125s ease-out, visibility 0s step-start;
+  }
+
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @thickness: 20px;
+  .title {
+    position: absolute;
+    height: @thickness * 1.25;
+    width: 100%;
+    top: -@thickness * 1.25;
+    left: 0px;
+    cursor: move;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .top-left-resize-handle {
+    position: absolute;
+    height: @thickness;
+    width: @thickness;
+    top: -@thickness * 2;
+    left: -@thickness;
+    cursor: nwse-resize;
+  }
+  .top-resize-handle {
+    position: absolute;
+    height: @thickness;
+    width: 100%;
+    top: -@thickness * 2;
+    left: 0px;
+    cursor: ns-resize;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 50%;
+      width: 100%;
+      border-bottom: 1px dashed #000000;
+    }
+  }
+  .top-right-resize-handle {
+    position: absolute;
+    height: @thickness;
+    width: @thickness;
+    top: -@thickness * 2;
+    right: -@thickness;
+    cursor: nesw-resize;
+  }
+  .left-resize-handle {
+    position: absolute;
+    width: @thickness;
+    top: -@thickness;
+    bottom: 0px;
+    left: -@thickness;
+    cursor: ew-resize;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      height: 100%;
+      width: 50%;
+      border-right: 1px dashed #000000;
+    }
+  }
+  .right-resize-handle {
+    position: absolute;
+    width: @thickness;
+    top: -@thickness;
+    bottom: 0px;
+    right: -@thickness;
+    cursor: ew-resize;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 100%;
+      width: 50%;
+      border-left: 1px dashed #000000;
+    }
+  }
+  .bottom-left-resize-handle {
+    position: absolute;
+    height: @thickness;
+    width: @thickness;
+    bottom: -@thickness;
+    left: -@thickness;
+    cursor: nesw-resize;
+  }
+  .bottom-resize-handle {
+    position: absolute;
+    height: @thickness;
+    width: 100%;
+    bottom: -@thickness;
+    left: 0px;
+    cursor: ns-resize;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      height: 50%;
+      width: 100%;
+      border-top: 1px dashed #000000;
+    }
+  }
+  .bottom-right-resize-handle {
+    position: absolute;
+    height: @thickness;
+    width: @thickness;
+    bottom: -@thickness;
+    right: -@thickness;
+    cursor: nwse-resize;
+  }
+}

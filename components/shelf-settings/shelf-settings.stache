@@ -1,0 +1,76 @@
+{{<numberField}}
+  <div class="field number">
+    <label title="{{placeholder}}">{{label}}</label>
+    <input
+      type="number"
+      title="{{placeholder}}"
+      min="1"
+      step="1"
+      value:from="scope.root.formData[prop]"
+      on:input="scope.root.setValue(., scope.element.value)"
+      placeholder="{{placeholder}}"
+    />
+  </div>
+{{/numberField}}
+
+{{<colorField}}
+  <div class="field color">
+    <label title="{{placeholder}}">{{label}}</label>
+    <input
+      type="text"
+      title="{{placeholder}}"
+      value:from="scope.root.formData[prop]"
+      on:input="scope.root.setValue(., scope.element.value)"
+      placeholder="{{placeholder}}"
+    />
+    <div class="show-color" style="background-color: {{scope.root.formData[prop]}};">
+      <input type="color" on:change="scope.root.setValue(., scope.element.value)">
+    </div>
+  </div>
+{{/colorField}}
+
+<div>
+  <span class="title">{{^if shelfData}}Create New Shelf{{else}}Edit Shelf Settings{{/if}}</span>
+  <div class="field title">
+    <label>Title</label>
+    <input
+      type="text"
+      value:from="formData.title"
+      on:input:value:to="formData.title"
+    />
+  </div>
+  <div class="field title">
+    <label>Type</label>
+    <div class="shelf-type">Grid</div>
+  </div>
+  <div class="tab-panel">
+    {{---}}
+    <div class="tab-tray">
+      {{---}}
+      <div class="tab {{#is tab 'presets'}}selected{{/is}}" on:click="set('tab', 'presets')">Presets</div>
+      {{---}}
+      <div class="tab {{#is tab 'custom'}}selected{{/is}}" on:click="set('tab', 'custom')">Customize</div>
+      {{---}}
+    </div>
+    {{---}}
+    <div class="tab-body presets {{#is tab 'presets'}}selected{{/is}}">
+      Presets
+    </div>
+    {{---}}
+    <div class="tab-body custom {{#is tab 'custom'}}selected{{/is}}">
+      {{#each(fields, field=value)}}
+        {{#is field.type 'number'}}
+          {{>numberField field}}
+        {{/is}}
+        {{#is field.type 'color'}}
+          {{>colorField field}}
+        {{/is}}
+      {{/each}}
+    </div>
+    {{---}}
+  </div>
+  {{#if cancelFn}}
+    <button class="cancel" on:click="cancel()">Cancel</button>
+  {{/if}}
+  <button class="save" on:click="save()">Done</button>
+</div>

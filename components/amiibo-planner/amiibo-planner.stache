@@ -1,0 +1,42 @@
+<nav-menu
+  newPlanSaveFn:to="newPlanSaveFn"
+  newShelfSaveFn:to="newShelfSaveFn"
+  newShelfCancelFn:to="newShelfCancelFn"
+  amiibos:bind="amiibos"
+>
+</nav-menu>
+
+{{#each currentPlan.shelves}}
+  <wh-lt
+    w:bind="w" h:bind="h"
+    l:bind="l" t:bind="t"
+    title:bind="title"
+    minw:from="../minw(.)"
+    minh:from="../minh(.)"
+    minl:from="20"
+    mint:from="80"
+  >
+    <amiibo-shelf
+      shelf:bind="."
+      selectFn:to="../selectFn"
+      cancelFn:to="../cancelFn"
+      amiibos:bind="../amiibos"
+    >
+    </amiibo-shelf>
+  </wh-lt>
+{{/each}}
+
+<select-amiibo
+  {{^if selectFn}}style="display:none;"{{/if}}
+  selectFn:from="selectFn"
+  cancelFn:from="cancelFn"
+  amiibos:to="amiibos"
+>
+</select-amiibo>
+
+<shelf-settings
+  saveFn:from="shelfSettingsSaveFn"
+  cancelFn:from="shelfSettingsCancelFn"
+  {{^if showShelfSettings}}style="display: none;"{{/if}}
+>
+</shelf-settings>

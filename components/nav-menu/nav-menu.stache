@@ -1,0 +1,143 @@
+<a title="Amiibo Planner" href="https://james0x57.github.io/amiibo-planner/">
+  <div class="logo">
+    <div style="--color: #ec1b2e;"></div><div style="--color: #00a78d;"></div>
+    <div style="--color: #9dcb3b;"></div><div style="--color: #f9a51a;"></div>
+    <div style="--color: #00b2ef;"></div><div style="--color: #ed3c95;"></div>
+  </div>
+  <h1>Amiibo Planner</h1>
+</a>
+
+<div class="nav-items">
+  <div class="nav-item" style="--color: #ec1b2e;">
+    <div class="label"><span>New</span></div>
+    <div class="below">
+      <div class="panel">
+        <div class="panel-item">
+          <div class="panel-label">Shelf</div>
+          <div class="panel-content">
+            <button on:click="set('addShelf', true)">Add new shelf to current plan</button>
+          </div>
+        </div>
+        <div class="panel-item">
+          <div class="panel-label">Plan</div>
+          <div class="panel-content">
+            <button on:click="abandondCurrentAndCreateNew()">Abandon any unsaved changes and create a new plan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-item" style="--color: #00a78d;">
+    <div class="label"><span>Load</span></div>
+    <div class="below">
+      <div class="panel">
+        <div class="panel-item">
+          <div class="panel-label">Local</div>
+          <div class="panel-content">
+            Select a save from your Local Storage:
+          </div>
+        </div>
+        <div class="panel-item">
+          <div class="panel-label">JSON</div>
+          <div class="panel-content">
+            Paste your Amiibo Planner save data in the text box:
+            <textarea></textarea>
+            <button>Load</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-item" style="--color: #9dcb3b;" on:mouseenter="viewJSON()">
+    <div class="label"><span>Save</span></div>
+    <div class="below">
+      <div class="panel">
+        <div class="panel-item">
+          <div class="panel-label">Local</div>
+          <div class="panel-content">
+            Select a save from your Local Storage:
+            <button on:click="savePlan()">save</button>
+          </div>
+        </div>
+        <div class="panel-item">
+          <div class="panel-label">JSON</div>
+          <div class="panel-content">
+            Here is your Amiibo Planner save data for the current state:
+            <textarea value:from="jsonSaveData"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-item" style="--color: #f9a51a;">
+    <div class="label"><span>Share</span></div>
+    <div class="below">
+      <div class="panel">
+        <div class="panel-item">
+          <div class="panel-label">Share</div>
+          <div class="panel-content">
+            Upload your current state to TEXT SITE and get a sharable link
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-item" style="--color: #00b2ef;">
+    <div class="label"><span>About</span></div>
+    <div class="below">
+      <div class="panel">
+        <div class="panel-item">
+          <div class="panel-label">README</div>
+          <div class="panel-content">
+            {{{aboutPageHTML}}}
+          </div>
+        </div>
+        <div class="panel-item">
+          <div class="panel-label">James0x57</div>
+          <div class="panel-content">
+            Hi
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="nav-item" style="--color: #ed3c95;">
+    <div class="label"><span>Source</span></div>
+    <div class="below">
+      <div class="panel">
+        <div class="panel-item">
+          <div class="panel-label" style="padding-top: 7px;">Amiibo Planner</div>
+          <div class="panel-content">
+            The Amiibo Planner app is open source. View it on my github here!
+          </div>
+        </div>
+        <div class="panel-item">
+          <div class="panel-label">CanJS</div>
+          <div class="panel-content">
+            Amiibo Planner uses the CanJS framework.
+            View it on github here!
+          </div>
+        </div>
+        <div class="panel-item">
+          <div class="panel-label">StealJS</div>
+          <div class="panel-content">
+            Amiibo Planner uses the StealJS package loader.
+            View it on github here!
+          </div>
+        </div>
+        <div class="panel-item">
+          <div class="panel-label">AmiiboAPI</div>
+          <div class="panel-content">
+            Amiibo Planner uses the the AmiiboAPI by N3evin.
+            View it on github here! https://github.com/N3evin/AmiiboAPI
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<content />
+
+<div on:pointerdown="dragInit(scope.event, topLeftResize)" class="shy no-select top-left-resize-handle"></div>
+<div on:pointerdown="dragInit(scope.event, topResize)" class="shy no-select top-resize-handle"></div>
+<div on:pointerdown="dragInit(scope.event, move)" class="shy no-select title" title="{{title}}">{{title}}</div>
+<div on:pointerdown="dragInit(scope.event, topRightResize)" class="shy no-select top-right-resize-handle"></div>
+<div on:pointerdown="dragInit(scope.event, leftResize)" class="shy no-select left-resize-handle"></div>
+<div on:pointerdown="dragInit(scope.event, rightResize)" class="shy no-select right-resize-handle"></div>
+<div on:pointerdown="dragInit(scope.event, bottomLeftResize)" class="shy no-select bottom-left-resize-handle"></div>
+<div on:pointerdown="dragInit(scope.event, bottomResize)" class="shy no-select bottom-resize-handle"></div>
+<div on:pointerdown="dragInit(scope.event, bottomRightResize)" class="shy no-select bottom-right-resize-handle"></div>

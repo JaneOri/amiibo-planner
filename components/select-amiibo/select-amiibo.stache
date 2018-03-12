@@ -1,0 +1,37 @@
+<div>
+  <span class="title">Choose Amiibo</span>
+
+  <input
+    class="filter"
+    type="text"
+    value:from="filter"
+    on:input:value:to="filter"
+    placeholder="filter by series + name"
+  />
+
+  <span class="adv" on:click="toggleAdvanced()">(adv)</span>
+
+  {{#if filter.length}}
+    <span class="clear-filter" on:click="clearFilter()">x</span>
+  {{/if}}
+
+  {{#if adv}}
+    <div class="adv-options">
+      Type:
+      <input type="checkbox" checked:bind="figure" id="figure"> <label for="figure">Figure</label>
+      <input type="checkbox" checked:bind="yarn" id="yarn"> <label for="yarn">Yarn</label>
+      <input type="checkbox" checked:bind="card" id="card"> <label for="card">Card</label>
+    </div>
+  {{/if}}
+
+  <ul>
+    {{#filteredAmiibos}}
+      <li on:click="../selectFn(.)" {{#if image}}style="background-image: url('{{image}}');"{{/if}}>
+        {{#if image}}<img src:from="image" alt:from="character" />{{/if}}
+        <div class="series">{{amiiboSeries}}</div>
+        <div class="name">{{name}}</div>
+      </li>
+    {{/filteredAmiibos}}
+  </ul>
+  <button on:click="cancelFn()">Cancel</button>
+</div>
