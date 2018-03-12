@@ -1,5 +1,5 @@
 <ul
-  class="amiibo-shelf theater"
+  class="amiibo-shelf"
   style="--row-gap: {{shelf.rowGap}}px; --col-gap: {{shelf.colGap}}px; --columns: {{shelf.x}}; --shelf-width: {{shelf.w}}px;"
 >
   {{#each(slots, amiibo=value i=index)}}
@@ -10,7 +10,7 @@
       on:pointerenter="../previewSwap(amiibo, i)"
       on:pointerleave="../unviewSwap(i)"
     >
-      {{#if amiibo.image}}
+      {{#if ../showImage(amiibo)}}
         <img
           style="width: {{amiibo.imageScale.scale}}%; left: {{amiibo.imageScale.left}}%;"
           src:from="amiibo.image"

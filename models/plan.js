@@ -85,6 +85,4 @@ Plan.List = can.DefineList.extend("PlanList", {
   "#": Plan
 })
 
-window.Plan = Plan
-
 export default Plan

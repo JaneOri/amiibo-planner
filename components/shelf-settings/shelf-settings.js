@@ -47,7 +47,6 @@ export const ViewModel = can.DefineMap.extend({
 
   saveFn: "*",
   save () {
-    console.log(this.shelfData, this.formData)
     this.saveFn(this.formData)
   },
 

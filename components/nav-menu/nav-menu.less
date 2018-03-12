@@ -122,7 +122,16 @@ nav-menu {
             }
             .panel-content {
               z-index: 30;
+              box-shadow: -100px 0px 0px rgba(128, 128, 128, 0.125);
             }
+          }
+
+          &:last-child .panel-content {
+            box-shadow: -100px 0px 0px rgba(128, 128, 128, 0.125);
+          }
+
+          &:hover ~:last-child .panel-content {
+            box-shadow: initial;
           }
         }
         .panel-label {
@@ -146,7 +155,6 @@ nav-menu {
           bottom: 5px;
           border-left: 5px solid var(--color);
           padding: 10px;
-          box-shadow: -100px 0px 0px rgba(128, 128, 128, 0.125);
         }
       }
     }

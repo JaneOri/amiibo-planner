@@ -16,6 +16,10 @@ export const ViewModel = can.DefineMap.extend({
     }
   },
 
+  showImage (slot) {
+    return slot && slot.image
+  },
+
   gridSelectors (index) {
     const columns = this.shelf.x
     const rows = this.shelf.y
