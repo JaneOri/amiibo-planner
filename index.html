@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Amiibo Planner</title>
+  <link rel="stylesheet" type="text/css" href="utils/loading/loading.css">
+  <script type="text/javascript" src="utils/loading/loading.js"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -14,6 +16,9 @@
   <meta name="msapplication-TileColor" content="#603cba">
   <meta name="msapplication-config" content="/icons/browserconfig.xml">
   <meta name="theme-color" content="#efeef6">
+  <meta name="keywords" content="Amiibo, Collection">
+  <meta name="description" content="Plan the display and setup of your Amiibo collection!">
+  <meta name="author" content="James0x57">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/can.js/4.1.0/can.all.js"></script>
   <!-- script src="https://cdn.jsdelivr.net/npm/can@4.1.0/dist/global/can.all.js"></script-->
@@ -40,5 +45,20 @@
 </head>
 <body>
   <amiibo-planner></amiibo-planner>
+
+  <div class="loading-animated" style="display: none;">
+    <div class="loading amiibo">
+      <div style="--color: #ec1b2e;"></div><div style="--color: #00a78d;"></div>
+      <div style="--color: #9dcb3b;"></div><div style="--color: #f9a51a;"></div>
+      <div style="--color: #00b2ef;"></div><div style="--color: #ed3c95;"></div>
+    </div>
+    <div class="loading-text">
+      Amiibo Planner<br>
+      Loading...
+    </div>
+    <script type="text/javascript">
+      window.showLoading()
+    </script>
+  </div>
 </body>
 </html>

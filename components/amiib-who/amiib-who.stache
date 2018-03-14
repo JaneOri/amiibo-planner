@@ -1,0 +1,69 @@
+{{#if show}}
+  <div>
+    <div class="splash rotate1">
+      {{#each(splashColor1, x=index)}}
+        <div class="splash-color-1" style="--width: {{../width(x, 900)}}px; --index: {{x}}; --deg: {{../deg(x, ../splashColor1.length)}}deg;"></div>
+      {{/each}}
+    </div>
+    <div class="splash rotate2">
+      {{#each(splashColor2, x=index)}}
+        <div class="splash-color-2" style="--width: {{../width(x, 750)}}px; --index: {{x}}; --deg: {{../deg(x, ../splashColor2.length)}}deg;"></div>
+      {{/each}}
+    </div>
+
+    {{#if randomAmiibo}}
+      {{^is entryState 'resetting'}}
+        <img class="amiibwhoshadow {{#if reveal}}reveal{{/if}}" src:from="randomAmiibo.image" alt="AmiibWHO">
+        <img class="amiibwhoimg {{#if reveal}}reveal{{/if}}" src:from="randomAmiibo.image" alt="AmiibWHO">
+      {{/is}}
+    {{/if}}
+
+    {{#switch entryState}}
+      {{#case 'correct'}}
+        <div class="reveal-info">
+          <div class="correct-answer">{{randomAmiibo.character}}</div>
+          <div class="more-info">
+            {{randomAmiibo.amiiboSeries}} - {{randomAmiibo.name}}
+          </div>
+        </div>
+      {{/case}}
+      {{#case 'incorrect'}}
+        <div class="reveal-info">
+          <div class="correct-answer">{{randomAmiibo.character}}</div>
+          <div class="more-info">
+            {{randomAmiibo.amiiboSeries}} - {{randomAmiibo.name}}
+          </div>
+        </div>
+      {{/case}}
+      {{#case 'resetting'}}
+        <div class="exclaim">
+          <span>?</span>
+          <span>!</span>
+        </div>
+      {{/case}}
+      {{#case 'playing'}}
+        <div class="exclaim">
+          <span>?</span>
+          <span>!</span>
+        </div>
+      {{/case}}
+    {{/switch}}
+
+    <div class="letters">
+      <span>A</span>
+      <span>m</span>
+      <span>i</span>
+      <span>i</span>
+      <span>b</span>
+      <span>W</span>
+      <span>H</span>
+      <span>O</span>
+    </div>
+
+    <div class="score">{{correct}} / {{count}}</div>
+
+    <div class="user-entry {{entryState}}">{{userEntry}}</div>
+
+    <div class="exit" on:click="set('show', false)">Exit</div>
+  </div>
+{{/if}}

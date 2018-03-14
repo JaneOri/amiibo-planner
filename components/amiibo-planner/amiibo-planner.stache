@@ -40,3 +40,5 @@
   {{^if showShelfSettings}}style="display: none;"{{/if}}
 >
 </shelf-settings>
+
+<amiib-who amiibos:bind="amiibos" />

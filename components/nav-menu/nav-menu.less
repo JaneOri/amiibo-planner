@@ -6,8 +6,40 @@ nav-menu {
   border-top: 4px solid #6868d8;
   border-bottom: 1px solid #CCCCEE;
   background-color: #ffffff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: none;
+  
+  > :hover ~ .blockhover {
+    visibility: hidden;
+    transition: visibility 0s step-start;
+  }
 
-  a {
+  .blockhover {
+    position: absolute;
+    top: -4px;
+    height: 14px;
+    left: 0px;
+    right: 0px;
+    z-index: 100;
+    visibility: visible;
+    /* wait 1 second before becoming interactive again */
+    transition: visibility 1s step-end;
+
+    &:hover {
+      height: 54px;
+    }
+  }
+
+  @media only screen and (max-device-height: 768px) and (max-device-width: 1024px) {
+    .blockhover {
+      display: none;
+    }
+  }
+
+  > a {
     text-decoration: none;
     color: #000000;
     display: inline-grid;
@@ -34,6 +66,20 @@ nav-menu {
     display: inline-block;
     vertical-align: middle;
     margin-left: 5px;
+  }
+  h2 {
+    color: var(--color);
+  }
+  p {
+    margin-top: 10px;
+  }
+  img.btc {
+    width: 175px;
+    margin-top: 8px;
+    image-rendering: -webkit-optimize-contrast;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .nav-items {
@@ -76,7 +122,7 @@ nav-menu {
       padding: 10px;
       border: 1px solid #CCCCEE;
       background: #ffffff;
-      cursor: auto;
+      cursor: default;
       text-align: left;
 
       textarea {

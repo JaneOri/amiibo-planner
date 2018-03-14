@@ -1,0 +1,56 @@
+.loading-animated {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.85) 42%, rgba(255, 255, 255, 0) 65%);
+  padding: 64px;
+  pointer-events: none;
+}
+
+.loading {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 6%;
+  width: 55px;
+  height: 55px;
+  background-color: #ffffff;
+  border: 4px solid #ffffff;
+  vertical-align: top;
+  box-shadow: 0 0 0 1px #000000;
+  perspective: 90px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.loading > * {
+  background-color: var(--color);
+  transition: all 1s ease-out;
+}
+.loading.amiibo > :nth-child(1) {
+  transform: translate(-164%, -76%) rotateZ(30deg) rotateY(64deg);
+}
+.loading.amiibo > :nth-child(2) {
+  transform: translate(164%, -76%) rotateZ(-30deg) rotateY(-64deg);
+}
+.loading.amiibo > :nth-child(3) {
+  transform: translate(-196%, 0%) rotateZ(0deg) rotateY(64deg);
+}
+.loading.amiibo > :nth-child(4) {
+  transform: translate(196%, 0%) rotateZ(0deg) rotateY(-64deg);
+}
+.loading.amiibo > :nth-child(5) {
+  transform: translate(-164%, 76%) rotateZ(-30deg) rotateY(64deg);
+}
+.loading.amiibo > :nth-child(6) {
+  transform: translate(164%, 76%) rotateZ(30deg) rotateY(-64deg);
+}
+.loading-text {
+  margin-top: 15px;
+  text-align: center;
+  width: 125px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: sans-serif;
+}

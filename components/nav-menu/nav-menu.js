@@ -39,7 +39,11 @@ export const ViewModel = can.DefineMap.extend({
   showLoadingInfo: {
     type: "boolean",
     get () {
-      return this.amiibosLoading || this.sharedDataLoading
+      const showLoading = this.amiibosLoading || this.sharedDataLoading
+      if (!showLoading) {
+        window.hideLoading()
+      }
+      return showLoading
     }
   },
 
@@ -74,7 +78,9 @@ export const ViewModel = can.DefineMap.extend({
       // no saved data is tied, throw it away
       const allPlans = Plan.global.allPlans
       const index = allPlans.indexOf(currentPlan)
-      (index >= 0) && allPlans.splice(index, 1)
+      if (index >= 0) {
+        allPlans.splice(index, 1)
+      }
     }
   },
 

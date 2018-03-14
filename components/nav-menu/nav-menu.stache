@@ -1,3 +1,7 @@
+{{#if showLoadingInfo}}
+  {{! TODO: show details }}
+{{/if}}
+
 <a title="Amiibo Planner" href="http://amiiboplanner.com/">
   <div class="logo">
     <div style="--color: #ec1b2e;"></div><div style="--color: #00a78d;"></div>
@@ -99,7 +103,13 @@
         <div class="panel-item">
           <div class="panel-label">James0x57</div>
           <div class="panel-content">
-            Hi
+            <p style="margin-top: 0px; margin-bottom: 10px;">
+              Hi! I collect amiibo. I have all of them minus the cards.<br>
+              My main shelf, made with k'nex, is 11 figures wide. There are 11 Splatoon amiibo right now.<br>
+              They announced two more though... so I'll have to redo the whole layout.
+            </p>
+            Bitcoin me?<br>
+            <img class="btc" src="icons/btc.png" alt="bitcoin address qr code" title="Is that tacky? It might be tacky. Not even practical really; the fee's like $8. I like the idea of crypto though and it's cool in cyber-hipster kind of way, I guess. So I'll leave it. Have a wonderful day, stranger. //James">
           </div>
         </div>
       </div>
@@ -126,7 +136,7 @@
         <div class="panel-item">
           <div class="panel-label">StealJS</div>
           <div class="panel-content">
-            Amiibo Planner uses the StealJS package loader.
+            Amiibo Planner uses the StealJS module loader.
             View it on github here!
           </div>
         </div>
@@ -141,3 +151,5 @@
     </div>
   </div>
 </div>
+
+<div class="blockhover"></div>

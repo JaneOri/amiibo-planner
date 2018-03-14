@@ -23,12 +23,19 @@ wh-lt {
     user-select: none;
   }
 
-  @thickness: 20px;
+  --thickness: 20px;
+  @media only screen and (max-device-height: 768px) and (max-device-width: 1024px) {
+    --thickness: 40px;
+    .shy {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
   .title {
     position: absolute;
-    height: @thickness * 1.25;
+    height: ~"calc(var(--thickness) * 1.25)";
     width: 100%;
-    top: -@thickness * 1.25;
+    top: ~"calc(-1 * var(--thickness) * 1.25)";
     left: 0px;
     cursor: move;
     overflow: hidden;
@@ -37,17 +44,17 @@ wh-lt {
   }
   .top-left-resize-handle {
     position: absolute;
-    height: @thickness;
-    width: @thickness;
-    top: -@thickness * 2;
-    left: -@thickness;
+    height: var(--thickness);
+    width: var(--thickness);
+    top: ~"calc(-1 * var(--thickness) * 2)";
+    left: ~"calc(-1 * var(--thickness))";
     cursor: nwse-resize;
   }
   .top-resize-handle {
     position: absolute;
-    height: @thickness;
+    height: var(--thickness);
     width: 100%;
-    top: -@thickness * 2;
+    top: ~"calc(-1 * var(--thickness) * 2)";
     left: 0px;
     cursor: ns-resize;
 
@@ -63,18 +70,18 @@ wh-lt {
   }
   .top-right-resize-handle {
     position: absolute;
-    height: @thickness;
-    width: @thickness;
-    top: -@thickness * 2;
-    right: -@thickness;
+    height: var(--thickness);
+    width: var(--thickness);
+    top: ~"calc(-1 * var(--thickness) * 2)";
+    right: ~"calc(-1 * var(--thickness))";
     cursor: nesw-resize;
   }
   .left-resize-handle {
     position: absolute;
-    width: @thickness;
-    top: -@thickness;
+    width: var(--thickness);
+    top: ~"calc(-1 * var(--thickness))";
     bottom: 0px;
-    left: -@thickness;
+    left: ~"calc(-1 * var(--thickness))";
     cursor: ew-resize;
 
     &:before {
@@ -89,10 +96,10 @@ wh-lt {
   }
   .right-resize-handle {
     position: absolute;
-    width: @thickness;
-    top: -@thickness;
+    width: var(--thickness);
+    top: ~"calc(-1 * var(--thickness))";
     bottom: 0px;
-    right: -@thickness;
+    right: ~"calc(-1 * var(--thickness))";
     cursor: ew-resize;
 
     &:before {
@@ -107,17 +114,17 @@ wh-lt {
   }
   .bottom-left-resize-handle {
     position: absolute;
-    height: @thickness;
-    width: @thickness;
-    bottom: -@thickness;
-    left: -@thickness;
+    height: var(--thickness);
+    width: var(--thickness);
+    bottom: ~"calc(-1 * var(--thickness))";
+    left: ~"calc(-1 * var(--thickness))";
     cursor: nesw-resize;
   }
   .bottom-resize-handle {
     position: absolute;
-    height: @thickness;
+    height: var(--thickness);
     width: 100%;
-    bottom: -@thickness;
+    bottom: ~"calc(-1 * var(--thickness))";
     left: 0px;
     cursor: ns-resize;
 
@@ -133,10 +140,10 @@ wh-lt {
   }
   .bottom-right-resize-handle {
     position: absolute;
-    height: @thickness;
-    width: @thickness;
-    bottom: -@thickness;
-    right: -@thickness;
+    height: var(--thickness);
+    width: var(--thickness);
+    bottom: ~"calc(-1 * var(--thickness))";
+    right: ~"calc(-1 * var(--thickness))";
     cursor: nwse-resize;
   }
 }

@@ -6,6 +6,7 @@ import 'components/wh-lt/'
 import 'components/amiibo-shelf/'
 import 'components/select-amiibo/'
 import 'components/shelf-settings/'
+import 'components/amiib-who/'
 import Plan from 'models/plan'
 
 export const ViewModel = can.DefineMap.extend({
